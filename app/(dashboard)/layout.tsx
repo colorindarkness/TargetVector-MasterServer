@@ -75,17 +75,17 @@ function DesktopNav() {
           <Home className="h-5 w-5" />
         </NavItem>
 
-        <NavItem href="#" label="Servers">
+        <NavItem href="/servers" label="Servers">
           <Home className="h-5 w-5" />
         </NavItem>
 
         <Separator></Separator>
 
-        <NavItem href="#" label="Dashboard">
+        <NavItem href="admin/" label="Dashboard">
           <Home className="h-5 w-5" />
         </NavItem>
 
-        <NavItem href="#" label="Servers">
+        <NavItem href="admin/servers" label="Servers">
           <Home className="h-5 w-5" />
         </NavItem>
 
