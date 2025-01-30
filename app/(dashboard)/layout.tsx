@@ -31,6 +31,7 @@ import { VercelLogo } from '@/components/icons';
 import Providers from './providers';
 import { NavItem } from './nav-item';
 import { SearchInput } from './search';
+import { Separator } from '@radix-ui/react-menu';
 
 export default function DashboardLayout({
   children
@@ -70,11 +71,33 @@ function DesktopNav() {
           <span className="sr-only">Acme Inc</span>
         </Link>
 
+        <NavItem href="#" label="Home">
+          <Home className="h-5 w-5" />
+        </NavItem>
+
+        <NavItem href="#" label="Servers">
+          <Home className="h-5 w-5" />
+        </NavItem>
+
+        <Separator></Separator>
+
         <NavItem href="#" label="Dashboard">
           <Home className="h-5 w-5" />
         </NavItem>
 
-        <NavItem href="#" label="Orders">
+        <NavItem href="#" label="Servers">
+          <Home className="h-5 w-5" />
+        </NavItem>
+
+        <NavItem href="#" label="Maps">
+          <Home className="h-5 w-5" />
+        </NavItem>
+
+        <NavItem href="#" label="Mods">
+          <Home className="h-5 w-5" />
+        </NavItem>
+
+        <NavItem href="#" label="Users">
           <ShoppingCart className="h-5 w-5" />
         </NavItem>
 
