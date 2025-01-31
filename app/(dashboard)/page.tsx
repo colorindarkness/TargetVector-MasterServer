@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 
 import type * as React from "react"
 import { Menu, Newspaper, Server, Heart, TrendingUp, Sparkles, Hourglass, Zap, Activity, PieChart, Gauge, Cloudy, Flag, Gamepad2, Database, Map, Cpu, LineChart, BookOpen, Bot, Settings2, SquareTerminal } from "lucide-react"
@@ -22,7 +22,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { File, PlusCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ProductsTable } from './products-table';
-// import { getProducts } from '@/lib/db';
+import { getProducts } from '@/lib/db';
 
 export default async function ProductsPage(
   props: {
@@ -32,10 +32,10 @@ export default async function ProductsPage(
   const searchParams = await props.searchParams;
   const search = searchParams.q ?? '';
   const offset = searchParams.offset ?? 0;
-  // const { products, newOffset, totalProducts } = await getProducts(
-  //   search,
-  //   Number(offset)
-  // );
+  const { products, newOffset, totalProducts } = await getProducts(
+    search,
+    Number(offset)
+  );
 
   return (
     <SidebarProvider>
@@ -61,7 +61,11 @@ export default async function ProductsPage(
             <div className="aspect-video rounded-xl bg-muted/50" />
             <div className="aspect-video rounded-xl bg-muted/50" />
             <div className="aspect-video rounded-xl bg-muted/50" />
-
+            <ProductsTable
+              products={products}
+              offset={newOffset ?? 0}
+              totalProducts={totalProducts}
+            />
           </div>
           <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
         </div>
